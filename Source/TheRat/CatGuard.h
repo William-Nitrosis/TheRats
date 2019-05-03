@@ -12,6 +12,8 @@
 #include "Kismet/GameplayStatics.h"
 #include "Engine/World.h"
 #include "Kismet/KismetMathLibrary.h"
+#include "MouseCharacter.h"
+#include "AI/Navigation/NavigationSystem.h"
 #include "CatGuard.generated.h"
 
 
@@ -66,4 +68,11 @@ public:
 	void SeePlayer(APawn* Pawn);
 	
 	FVector HomeLocation;
+
+	float TimeSpentWaiting = 0.f;
+	float TimeSpentSearching = 0.f;
+	bool ValuesBeenSet = false;
+
+
+	AMouseCharacter* mouse;
 };
