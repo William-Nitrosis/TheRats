@@ -113,5 +113,8 @@ void ACatGuard::SeePlayer(APawn* Pawn) {
 		UE_LOG(LogTemp, Warning, TEXT("MOVING TO %s"), *PlayerCharacter->GetActorLocation().ToString());
 		CatState = ECatState::MovingToPlayer;
 	}
+	else if (mouse) {
+		UE_LOG(LogTemp, Error, TEXT("SEEN PLAYER BUT IS HIDDEN"));
+	}
 
 }
